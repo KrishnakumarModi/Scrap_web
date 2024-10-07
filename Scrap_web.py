@@ -1,10 +1,12 @@
 from selenium import webdriver
-from time import sleep
+from selenium.webdriver.chrome.service import Service
+import time
 
-
-browser =webdriver.Chrome()
+service = Service(executable_path = "chromedriver.exe")
+browser = webdriver.Chrome(service=service)
 browser.get('https://www.noon.com/uae-en/sports-and-outdoors/exercise-and-fitness/yoga-16328/')
 browser.maximize_window()
+time.sleep(10)
 
 
 
@@ -32,5 +34,5 @@ for i in range(200):
 
 
 
-
+browser.quit()
 
