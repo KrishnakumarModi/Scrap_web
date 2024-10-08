@@ -63,7 +63,7 @@ for i in range(10):
    
 
 df = pd.DataFrame(product)
-df.to_csv('product.csv')
+
 
 
 
