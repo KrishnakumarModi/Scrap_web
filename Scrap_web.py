@@ -15,18 +15,18 @@ browser.maximize_window()
 
 
 
-
+"""
 product_Sponser ='sc-66eca60f-23 AkmCS'
 product_Brand ='pdp-brand-ZECB29782C8C4BD506B8EZ'
 product_Amount ='amount'
 product_Oldprice ='oldPrice'
-product_Name ="sc-66eca60f-24 fPskJH"
+product_Name ='//div[@class="sc-66eca60f-24 fPskJH"]'
 product_Rank =''
 product_Express ='sc-cf5a3a41-0 eVCkvW'
 product_Avg_rating ='sc-2709a77c-2 hUinXQ'
 product_Rating ='sc-2709a77c-5 kwLXrK'
 product_Link ='sc-19767e73-0 bwele'
-product_SKU ='modelNumber'
+product_SKU ='modelNumber'"""
 
 # NEXT BUTTON
 
@@ -37,7 +37,7 @@ def next_Page():
 
 
 
-product = {"SKU" : [product_SKU],
+"""product = {"SKU" : [product_SKU],
            "Name" : [product_Name],
            "Brand" : [product_Brand],
            "Average Rating" : [product_Avg_rating],
@@ -49,20 +49,19 @@ product = {"SKU" : [product_SKU],
            "Rank" : [product_Rank],
            "Link" : [product_Link]
 
-}
+}"""
 
 
-for i in range(10):
-    print('Scraping page',i+1)
-    products = browser.find_elements(By.CLASS_NAME , "product_Name")
-    for p in products:
-        product.append(p.text)
-    next_Page()
-    time.sleep(1)
-    
-   
+product_Box = browser.find_elements(By.XPATH, '//div[@class="sc-19767e73-1 fCFkgQ grid"]')
 
-df = pd.DataFrame(product)
+data =[]
+
+for product in product_Box:
+    name = product.find_element(By.XPATH, '//div[@class="sc-66eca60f-24 fPskJH"]').text.strip() 
+    data.append({'Name': name,})
+
+print(data)
+
 
 
 
