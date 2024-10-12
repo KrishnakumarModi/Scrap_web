@@ -7,7 +7,7 @@ This project is a web scraping application built in Python that extracts data fr
 ## Features
 
 - **Data Extraction**: Efficiently scrape data from https://www.noon.com/uae-en/sports-and-outdoors/exercise-and-fitness/yoga-16328/.
-- **Data Storage**: Stores the extracted data in CSV .
+- **Data Storage**: Stores the extracted data in CSV format.
 - **Proxy Support**:proxy is not used yet.
 
 ## Requirements
