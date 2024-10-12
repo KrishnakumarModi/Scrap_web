@@ -15,18 +15,7 @@ browser.maximize_window()
 
 
 
-"""
-product_Sponser ='sc-66eca60f-23 AkmCS'
-product_Brand ='pdp-brand-ZECB29782C8C4BD506B8EZ'
-product_Amount ='amount'
-product_Oldprice ='oldPrice'
-product_Name ='//div[@class="sc-66eca60f-24 fPskJH"]'
-product_Rank =''
-product_Express ='sc-cf5a3a41-0 eVCkvW'
-product_Avg_rating ='sc-2709a77c-2 hUinXQ'
-product_Rating ='sc-2709a77c-5 kwLXrK'
-product_Link ='sc-19767e73-0 bwele'
-product_SKU ='modelNumber'"""
+
 
 # NEXT BUTTON
 
@@ -37,19 +26,7 @@ def next_Page():
 
 
 
-"""product = {"SKU" : [product_SKU],
-           "Name" : [product_Name],
-           "Brand" : [product_Brand],
-           "Average Rating" : [product_Avg_rating],
-           "Rating Count" : [product_Rating],
-           "Sponsered" : [product_Sponser],
-           "Price" : [product_Oldprice],
-           "Sales Price" : [product_Amount],
-           "Express" : [product_Express],
-           "Rank" : [product_Rank],
-           "Link" : [product_Link]
 
-}"""
 
 
 
@@ -62,7 +39,7 @@ for i in range(2):
     print("scraping page",i+1)
     product_Link = browser.find_elements(By.XPATH, '//div[@class ="sc-66eca60f-0 EYQUt"]')   #//div[@class="sc-19767e73-1 fCFkgQ grid"]    
     for product in product_Link:
-        #SKU = product.find_element(By.CLASS_NAME, 'modelNumber').text.strip() #
+        SKU = product.find_element(By.CLASS_NAME, 'modelNumber').text.strip() #
         name = product.find_element(By.XPATH, '//div[@data-qa="product-name"]').text.strip() #//div[@class ="sc-66eca60f-24 fPskJH"]
         brand = product.find_element(By.XPATH, '//div[@class="sc-b74d844-16 cNYrWp"]').text.strip() #
         average = product.find_element(By.XPATH, '//div[@class="sc-2709a77c-2 hUinXQ"]').text.strip() #
